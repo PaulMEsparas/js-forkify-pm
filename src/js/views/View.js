@@ -7,7 +7,7 @@ export default class View {
         if(!data || (Array.isArray(data) && data.length === 0)) return this.renderError();    
 
         this._data = data;
-        console.log(data);
+      
         const markup = this._generatorMarkup();
         this._clear();
         this._parentEl.insertAdjacentHTML('afterbegin', markup);
@@ -22,7 +22,7 @@ export default class View {
         // if(!data || (Array.isArray(data) && data.length === 0)) return this.renderError();    
 
         this._data = data;
-        console.log(data);
+     
         const newMarkup = this._generatorMarkup();
 
         // convert string to nodeobject // creating a virtual DOM in the memory!
@@ -30,11 +30,11 @@ export default class View {
 
         // creting an object and selecting all the elements of the virtual DOM, Array.from (convert nodelist to Array)
         const newElements = Array.from(newDOM.querySelectorAll('*'));
-        console.log(newElements);
+     
 
         //Selecting all the elements of the current DOM
         const curElements = Array.from(this._parentEl.querySelectorAll('*'));
-        console.log(curElements);
+    
 
         //comparing the current elements of the current DOM to the elements of the virtual DOM
         newElements.forEach((newEl, i) => {
